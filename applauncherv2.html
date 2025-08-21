@@ -220,11 +220,9 @@ main#folders-container { margin-top: 220px; }
   max-width: 500px;       /* << narrower glass box */
   margin: 0 auto 8px;     /* center it; small bottom spacing */
 }
-
-/* App tiles (unchanged) */
 #non-erp a.app {
-  width: 95px;
-  height: 120px;
+  width: 120px;             /* fixed width for consistency */
+  height: auto;             /* let height adjust */
   background: rgba(255,255,255,0.12);
   border-radius: 24px;
   border: 1px solid rgba(255,255,255,0.18);
@@ -232,7 +230,7 @@ main#folders-container { margin-top: 220px; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   color: #fff;
   font-weight: 600;
   font-size: 0.95rem;
@@ -242,11 +240,16 @@ main#folders-container { margin-top: 220px; }
   transform-style: preserve-3d;
   perspective: 800px;
   will-change: transform;
+  padding: 8px 6px;
+  text-align: center;
+   align-items: center;       /* horizontal centering */
+  justify-content: center;   /* vertical centering */
 }
 #non-erp a.app:hover {
   transform: translateY(-12px) rotateX(10deg) rotateY(20deg);
   box-shadow: 0 16px 30px rgba(0,0,0,0.3);
 }
+
 #non-erp .app-icon {
   width: 36px;
   height: 36px;
@@ -254,11 +257,14 @@ main#folders-container { margin-top: 220px; }
   object-fit: contain;
   filter: drop-shadow(0 2px 2px rgba(0,0,0,0.5));
 }
+
 #non-erp a.app span {
-  text-align: center;
   width: 100%;
   display: block;
+  white-space: pre-line;      /* preserves line breaks */
+  line-height: 1.2em;
 }
+
 /* Floating login container */
 .floating-login {
   position: fixed;
@@ -344,86 +350,9 @@ main#folders-container { margin-top: 220px; }
   background: rgba(255, 255, 255, 0.25);
 }
 
-/* Responsive */
+/* Responsive
 /* === Laptops / smaller desktops === */
-@media (max-width: 1366px) {
-  /* Header glass: shrink width, reduce padding */
-  .header-glass {
-    min-width: 600px;
-    max-width: 90%;
-    padding: 15px 30px;
-  }
-  header h1 {
-    font-size: 2.5rem;
-  }
-  header p {
-    font-size: 1rem;
-  }
 
-  /* Folders container: reduce gap, allow wrapping */
-  #folders-container {
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 180px; /* slightly smaller top spacing */
-    justify-content: center;
-  }
-
-  /* Folder card: smaller width, padding, and 3D transform effect */
-  .folder {
-    width: 200px;
-    padding: 14px 12px;
-  }
-  .folder-label {
-    font-size: 1.1rem;
-  }
-
-  /* Folder apps: smaller icons */
-  .folder-app {
-    width: 56px;
-    height: 56px;
-    font-size: 0.8rem;
-  }
-  .folder-app-icon {
-    width: 24px;
-    height: 24px;
-  }
-
-  /* Non-ERP apps: smaller tiles */
-  #non-erp a.app {
-    width: 85px;
-    height: 100px;
-    font-size: 0.85rem;
-  }
-  #non-erp .app-icon {
-    width: 32px;
-    height: 32px;
-  }
-
-  /* Section title glass */
-  #non-erp .section-title {
-    font-size: 1.5rem;
-    max-width: 450px;
-    padding: 12px 20px;
-  }
-
-  /* Floating login: reduce size */
-  .floating-login {
-    width: 200px;
-    padding: 14px 16px;
-  }
-  .floating-login h3 {
-    font-size: 0.9rem;
-  }
-  .floating-login input[type="text"],
-  .floating-login input[type="password"] {
-    font-size: 0.85rem;
-    padding: 6px 8px;
-  }
-  .floating-login button {
-    font-size: 0.85rem;
-    padding: 6px 0;
-  }
-}
 
 </style>
 </head>
