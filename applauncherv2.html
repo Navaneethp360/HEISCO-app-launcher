@@ -268,9 +268,9 @@ main#folders-container { margin-top: 220px; }
 /* Floating login container */
 .floating-login {
   position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 230px;
+  top: 20px;          /* align with old logo */
+  left: 20px;         /* align with old logo */
+  width: 230px;       /* adjust as needed */
   padding: 18px 20px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px) saturate(150%);
@@ -280,6 +280,7 @@ main#folders-container { margin-top: 220px; }
   z-index: 20;
   font-family: "SF Pro Display", sans-serif;
 }
+
 
 /* Heading */
 .floating-login h3 {
@@ -365,9 +366,7 @@ main#folders-container { margin-top: 220px; }
 </video>
 
 <header role="banner">
-  <div class="header-logo-wrapper" aria-hidden="true">
-    <img src="HEISCO.png" alt="Heico Logo" class="header-logo" />
-  </div>
+
 
   <div class="header-glass">
     <h1>Unified Application Portal</h1>
