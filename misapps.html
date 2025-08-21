@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate MIS Applications</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  #mainHeader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* left align */
+    background-color: #b00; /* Oracle red */
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 25px; /* extra left padding */
+    letter-spacing: 0.5px;
+  }
+
+  /* Nav Row */
+  #navRow {
+    background-color: #e6e6e6;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 13px;
+    border-bottom: 2px solid #b00;
+  }
+
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+  }
+  .dropbtn {
+    background-color: transparent;
+    color: #b00;
+    padding: 4px 10px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  .dropbtn:hover {
+    color: #333;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 200px;
+    border: 1px solid #ccc;
+    z-index: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .dropdown-content a {
+    color: #333;
+    padding: 6px 12px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+  }
+  .dropdown-content a:hover {
+    background-color: #f2f2f2;
+    color: #b00;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Content */
+  #mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+    text-align: center;
+    padding: 20px;
+  }
+
+  #mainContent img {
+    width: 300px; /* bigger logo */
+    height: auto;
+    padding-left: 60px;
+    margin-bottom: 25px;
+  }
+
+  #mainContent h2 {
+    color: #b00;
+    font-size: 1.4rem;
+    font-weight: normal;
+  }
+    #footerBar {
+    background-color: #b00; /* same Oracle red */
+    color: #fff;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<header id="mainHeader">
+  Corporate MIS Applications
+</header>
+
+<div id="navRow">
+  <div class="dropdown">
+    <button class="dropbtn">MIS ▼</button>
+    <div class="dropdown-content">
+      <a href="http://miserp.heisco.com:7777/forms/frmservlet?config=heisco_en" target="_blank">HEISCO</a>
+      <a href="http://miserp.heisco.com:7777/forms/frmservlet?config=gdco_en" target="_blank">Gulf Dredging</a>
+      <a href="http://miserp.heisco.com:7777/forms/frmservlet?config=htsco_en" target="_blank">HEISCO Resources</a>
+      <a href="http://miserp.heisco.com:7777/forms/frmservlet?config=hsa_en" target="_blank">HEISCO KSA</a>
+      <a href="http://miserp.heisco.com:7777/forms/frmservlet?config=gulfsky_en" target="_blank">GulfSky KSA</a>
+    </div>
+  </div>
+</div>
+
+<div id="mainContent">
+  <img src="oracle.png" alt="Oracle Logo" />
+  <h2>Select an MIS Application from the menu above</h2>
+</div>
+<div id="footerBar">
+  HEISCO IT Department
+</div>
+</body>
+</html>

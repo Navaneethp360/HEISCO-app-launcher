@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corporate PMMS Apps</title>
+<style>
+  body { margin: 0; font-family: "Segoe UI", Tahoma, sans-serif; background-color: #f4f7fa; color: #333; }
+  #mainHeader { display: flex; background-color: white; color: #3c64ff; padding: 1px 0; height: 55px; justify-content: space-between; align-items: center; font-size: 22px; font-weight: bold; box-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+  #mainHeader img { height: 52px; width: 50%; display: block; }
+  #mainHeader .header-text {padding-left: 20px;}
+  #usernameDisplay { font-size: 0.9rem; color: #555; }
+
+  /* Navbar / Icon grid */
+#navRow {
+    display: none;
+    font-size: 11px;
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+  .app-grid {
+    display: flex;
+        margin-top: 10px;
+    justify-content: space-between; /* stretch evenly across navbar */
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .app-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #0033f7;
+    font-weight: bold;
+    background: #fff;
+    padding: 5px 12px;
+    border-radius: 8px;
+    transition: background 0.2s, transform 0.2s;
+    border: 2px solid #6496ff;
+    flex: 1;             /* each link stretches equally */
+    min-width: 300PX;   /* ensures a minimum size */
+    margin: 0 5px;       /* spacing between boxes */
+  }
+
+  .app-link img {
+    width: 28px;
+    height: 28px;
+    margin-right: 8px;
+  }
+
+  .app-link:hover {
+    background: #bdd2ff;
+    transform: translateY(-2px);
+  }
+
+  #loginOverlay { display: flex; justify-content: center; align-items: flex-start; padding-top: 10%; height: calc(100vh - 70px); background: #dcdcdc; }
+  #loginBox { background: white; border: 1px solid #000; padding-bottom: 15px; width: 451px; height: 245px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 0; }
+  #loginBoxHeader img { max-width: 100%; height: auto; margin-bottom: 20px; }
+  .form-row { display: flex; justify-content: center; align-items: center; margin-bottom: 8px; width: 90%; }
+  .form-row label { width: 80px; font-size: 0.9rem; text-align: right; margin-right: 8px; }
+  .form-row input { flex: 1; padding: 6px; max-width: 190px; margin-left: 40px; border: 1px solid #000; font-size: 0.9rem; }
+  .checkbox-row { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 10px; font-size: 0.85rem; }
+  .button-row { display: flex; justify-content: flex-end; }
+  .button-row button { margin-right: 80px; color: black; border: 1px solid #000; cursor: pointer; }
+
+  #mainContent {
+    display: none; 
+    height: calc(100vh - 70px); /* full page minus header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical centering */
+    align-items: center;     /* horizontal centering */
+    text-align: center;
+    gap: 20px; /* spacing between GIF and text */
+  }
+
+  #contentGif {
+    width: 500px;   /* bigger GIF */
+    height: 500px;  /* bigger GIF */
+    margin: 0 auto; 
+    background: url('pmmsbg.gif') center center no-repeat;
+    background-size: contain;
+  }
+
+  #mainText {
+    font-size: 18px;
+    color: #000000;
+  }
+
+  #footerBar {
+    background-color: #B9C9FF;
+    color: #fff;
+    text-align: center;
+    padding: 4px 0;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-weight: bold;
+  }
+.login-instruction {
+    font-size: 12px;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+</style>
+</head>
+<body>
+
+<header id="mainHeader">
+  <div class="header-text">Corporate PMMS Applications</div>
+  <img src="pmmshead.gif" alt="PMMS Header"/>
+</header>
+
+<div id="navRow">
+  <div class="app-grid">
+    <a href="http://pmmsheisco.heisco.com/pmms/login.aspx" target="_blank" class="app-link app">
+      <img src="icons/pmms.png" alt="HEISCO"> HEISCO
+    </a>
+    <a href="http://pmmsgdc.heisco.com/pmms/login.aspx" target="_blank" class="app-link app">
+      <img src="icons/pmms.png" alt="Gulf Dredging"> Gulf Dredging
+    </a>
+    <a href="http://pmmsheiscoresources.heisco.com/pmms/login.aspx" target="_blank" class="app-link app">
+      <img src="icons/pmms.png" alt="HEISCO RESOURCES"> HEISCO RESOURCES
+    </a>
+    <a href="http://pmmsheiscoksa.heisco.com/hksa/login.aspx" target="_blank" class="app-link app">
+      <img src="icons/pmms.png" alt="HEISCO KSA"> HEISCO KSA
+    </a>
+    <a href="http://pmmsgsf.heisco.com/GSFKSA/login.aspx" target="_blank" class="app-link app">
+      <img src="icons/pmms.png" alt="GULFSKY KSA"> GULFSKY KSA
+    </a>
+  </div>
+</div>
+
+<div id="loginOverlay">
+  <div id="loginBox">
+    <div id="loginBoxHeader">
+      <img src="pmmslogin.gif" alt="Login Header"/>
+    </div>
+      <div class="login-instruction">
+    Enter your credentials for single sign on to all PMMS applications
+  </div>
+    <form id="loginForm">
+      <div class="form-row">
+        <label for="loginUsername">Username</label>
+        <input type="text" id="loginUsername" required/>
+      </div>
+      <div class="form-row">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" required/>
+      </div>
+      <div class="checkbox-row">
+        <input type="checkbox" id="rememberMe"/>
+        <label for="rememberMe">Remember me</label>
+      </div>
+      <div class="button-row">
+        <button type="submit">Login</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="mainContent">
+  <div id="contentGif"></div>
+  <div id="mainText">Select a PMMS Application from the menu above to auto login using your credentials</div>
+</div>
+
+<div id="footerBar">
+  HEISCO IT Department
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.getElementById('loginForm');
+  const usernameInput = document.getElementById('loginUsername');
+  const passwordInput = document.getElementById('loginPassword');
+  const rememberCheckbox = document.getElementById('rememberMe');
+  const loginOverlay = document.getElementById('loginOverlay');
+  const navRow = document.getElementById('navRow');
+  const mainContent = document.getElementById('mainContent');
+
+  const savedUsername = getCookie('savedUsername');
+  const savedPassword = getCookie('savedPassword');
+  if (savedUsername && savedPassword) {
+    usernameInput.value = savedUsername;
+    passwordInput.value = savedPassword;
+    rememberCheckbox.checked = true;
+  }
+
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const user = usernameInput.value.trim();
+    const pass = passwordInput.value.trim();
+    if (!user || !pass) return;
+
+    if (rememberCheckbox.checked) {
+      setCookie('savedUsername', user, 30);
+      setCookie('savedPassword', pass, 30);
+    } else {
+      deleteCookie('savedUsername');
+      deleteCookie('savedPassword');
+    }
+
+    navRow.style.display = 'flex';
+    loginOverlay.style.display = 'none';
+  });
+
+  const appLinks = document.querySelectorAll('a.app');
+  appLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const user = usernameInput.value.trim();
+      const pass = passwordInput.value.trim();
+      if (!user || !pass) return;
+      const encoded = btoa(`${user}:${pass}`);
+      const separator = link.href.includes('?') ? '&' : '?';
+      const finalUrl = `${link.href}${separator}data=${encodeURIComponent(encoded)}`;
+      window.open(finalUrl, '_blank');
+    });
+  });
+
+  function setCookie(name, value, days) {
+    const expires = new Date(Date.now() + days*864e5).toUTCString();
+    document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
+  }
+  function getCookie(name) {
+    return document.cookie.split('; ').reduce((r,v)=> {
+      const parts = v.split('=');
+      return parts[0]===name? decodeURIComponent(parts[1]) : r;
+    },'');
+  }
+  function deleteCookie(name) { setCookie(name,'',-1); }
+});
+</script>
+</body>
+</html>
